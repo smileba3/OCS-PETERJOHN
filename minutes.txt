@@ -1,0 +1,26 @@
+(DONE) 1. All signatory must be available in the option
+(DONE) 2. Change icon to list
+(DONE) 3. Put comment if document is rejected
+(DONE) 4. Set automatic code (Ex. CCISMemo001_Series)
+(DONE) 5. Search by Sender/Memo Series/Title
+(DONE) 6. Put edit/modify option on rejected memo/letter
+(DONE) 7. Delete the rejected copy of memo or letter
+(DONE) 8. Recipient can forward the memo or letter
+(PAID SERVICE / Currently IMPOSSIBLE unless another PHP or Node.js server is involved) 9. Notification through email (GSuite account) include link to redirect
+(DONE) 10. Include dynamic report (year, month, series no., sender)
+(DONE) 11. Archive the old memo or letter
+(DONE) 12. Simplify the menu:
+  Received - Forward - Recipients
+  Released - Create
+(IMPOSSIBLE because their headers are different) 13. One template only (user can edit the department)
+(IMPOSSIBLE because their should only be one E-signature per person) 14. Remove the add department from Super Admin Side
+(IMPOSSIBLE because their should only be one E-signature per person) 15. Create separate account if the user has two designation
+(DONE) 16. Remove the create e-signature from the superadmin side, transfer to individual account
+(IMPOSSIBLE because e-signature is not from raw image but from html canvas converted to png. if uploaded e-signature has a background, it will cause problem)
+17. Put upload e-signature option
+(DONE) 18. Automate signatory's name and position based on the document creator
+(DONE) 19. Set document visibility according to the order of signatories
+(DONE) 20. include CC (carbon copy) feature
+(DONE) 21. Only notifications from your department will be displayed
+(DONE) 22. Auto generate code on memo and letter
+(DONE) 23. Add an option to select an individual, department, or all when sending documents

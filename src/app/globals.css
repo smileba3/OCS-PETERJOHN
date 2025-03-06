@@ -1,0 +1,177 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 245, 245, 245;
+  --background-end-rgb: 255, 255, 255;
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  @media print {
+    body, html {
+      background-color: white;
+    }
+  }
+  .printsize-portrait {
+    @page {
+      size: portrait;
+    }
+    @media print {
+      @page {
+        margin: 0;
+        padding: 0;
+        background-color: white;
+      }
+      background-color: white;
+    }
+    @media screen {
+      width: 216mm;
+      padding-top: 8mm;
+      padding-bottom: 8mm;
+      padding-left: 12.7mm;
+      padding-right: 12.7mm;
+      background-color: white;
+      font-family: Calibri, Helvetica, sans-serif;
+      font-size: 12pt;
+      border: 1px solid green;
+      border-radius: 4px;
+    }
+  }
+  .font-times {
+    font-family: 'Times New Roman', Times, serif;
+  }
+  .font-arial-narrow {
+    font-family: 'Arial Narrow', Arial, Calibri, serif;
+  }
+  .text-shadow-yellow {
+    text-shadow: 1px 1px 0 #cf9e18, -1px -1px 0 #cf9e18, 1px -1px 0 #cf9e18, -1px 1px 0 #cf9e18;
+  }
+  table.square-numbers tbody tr td {
+    line-height: 100%;
+    @apply aspect-square border text-center border-[rgb(var(--foreground-rgb))] px-1 pt-1
+  }
+  /* Radio Buttons */
+  label.square-radio {
+    display: inline-block;
+    cursor: pointer;
+  }
+  label.square-radio input[type="radio"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  label.square-radio input[type="radio"]:checked+span:after {
+    opacity: 1;
+    content: '\2713';
+    background-color: transparent;
+    translate: -25% 10%;
+    font-size: 14pt;
+  }
+  label.square-radio.mlsm input[type="radio"]:checked+span:after {
+    translate: -22% 2.5%;
+    font-size: 11pt;
+  }
+  label.square-radio span {
+    position: relative;
+    line-height: 100%;
+  }
+  label.square-radio span:before,
+  label.square-radio span:after {
+    content: '';
+  }
+  label.square-radio span:before {
+    border: 1px solid rgb(var(--foreground-rgb));
+    width: 11pt;
+    aspect-ratio: 1 / 1;
+    margin-right: 10px;
+    display: inline-block;
+    vertical-align: middle;
+  }
+  label.square-radio.mlsm span:before {
+    margin-right: 3px;
+    width: 9pt;
+  }
+  label.square-radio span:after {
+    background: #222021;
+    width: 14px;
+    height: 14px;
+    position: absolute;
+    top: 2px;
+    left: 4px;
+    transition: 300ms;
+    opacity: 0;
+  }
+  /* Checkboxes */
+  label.square-check {
+    display: block;
+    position: relative;
+    padding-left: 16px;
+    cursor: pointer;
+    font-size: 8pt;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  label.square-check:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  label.square-check input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  label.square-check input[type="checkbox"]:checked ~ .checkmark {
+    background-color: transparent;
+    color: rgb(var(--foreground-rgb));
+  }
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 10pt;
+    aspect-ratio: 1 / 1;
+    background-color: white;
+    border: 1px solid rgb(var(--foreground-rgb));
+  }
+  label.square-check .checkmark:after {
+    content: '\2713';
+    position: absolute;
+    top:-10%;
+    left: 0;
+    color: black;
+    font-size: 11pt;
+    display: none;
+    background-color: transparent;
+  }
+  label.square-check input[type="checkbox"]:checked ~ .checkmark:after {
+    display: block;
+  }
+  label.square-check .checkmark:checked ~ .checkmark:after {
+    display: block;
+  }
+
+  select.no-dropdown-icon {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background-color: white;
+  }
+}
